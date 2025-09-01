@@ -1,34 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <title>День рождения Арсения</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на день рождения Никиты!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        body {
+            background-color: #ffefd5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        section {
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, transform 1s;
+        }
+        
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 0 #ffd166;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 15px 0;
+            color: #118ab2;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        
+        .meme-container {
+            max-width: 100%;
+            margin: 20px 0;
+            border: 5px solid #06d6a0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .meme {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .caption {
+            padding: 10px;
+            background: #06d6a0;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .secret {
+            background: #073b4c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .ps {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffd166;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        .scroll-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: bounce 1s infinite;
+            color: #ef476f;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <section class="angle">
-	<div class="img__kandinsky" aria-label="Kandinsky">
-	</div>
-	<div class="block__address">
-		<p class="type__location">Жирафико</p>
-		<p class="type__address">Красный проспект, 311</p>
-	
-		<div class="block__border"></div>
-	</div>
-	<p class="type__eyebrow">Это будет особенный день</p>
-	<h1 class="type__title">ДЕНЬ РОЖДЕНИЯ</h1>
-	<h2 class="type__subtitle">С огромной радостью приглашаем вас на мой день рождения</h2>
-	<div class="block__birthday">
-	<p class="type__birthday__year">27.10</p>
-	<p class="type__birthday__word">в 14:00</p>
-	</div>
-	<div class="block__boxdeets">
-		<p class="type__boxdeets__big line__right line__btm span__row2 ">Дата и время:</p>
-		<p class="line__btm">27 октября</p>
-		<p class="line__btm">сборв 14:00 начало в 15:00</p>
-		<p class="type__boxdeets__big span__row2 line__right">Вас ожидает:</p>
-		<p class="line__btm">интересная программа, веселые игры, вкусная еда и приятная атмосфера</p>
-		<p class="line__left">Я уже с нетерпением жду нашей встречи
-	</div>
-</section>
-  </body>
+    <div class="scroll-hint">▼</div>
+    
+    <section id="intro">
+        <h1>ОФИЦИАЛЬНОЕ ПРИГЛАШЕНИЕ</h1>
+        <div class="meme-container">
+            <img class="meme" src="https://i.imgflip.com/71bzi5.jpg" alt="Мем про важное событие">
+            <div class="caption">Когда тебя приглашают на день рождения:</div>
+        </div>
+        <p>Готовься к самому эпическому событию года!</p>
+    </section>
+    
+    <section id="details">
+        <h2>ДЕТАЛИ МЕРОПРИЯТИЯ</h2>
+        <div class="meme-container">
+            <img class="meme" src="https://i.imgflip.com/7xm0j3.jpg" alt="Мем про караоке">
+            <div class="caption">Когда сказали, что будет караоке:</div>
+        </div>
+        <p><strong>Что:</strong> День рождения Никиты <span class="secret">(СЮРПРИЗ, ТССС!)</span></p>
+        <p><strong>Когда:</strong> Ждем Вас в 19:00 (а Никиту — в шоке)</p>
+        <p><strong>Где:</strong> Караоке клуб "Квентин Буратино", адрес: Ядринцевская, 18, зал ВЕГАС</p>
+    </section>
+    
+    <section id="gifts">
+        <h2>ПРО ПОДАРКИ</h2>
+        <div class="meme-container">
+            <img class="meme" src="https://i.imgflip.com/7xm1bn.jpg" alt="Мем про деньги">
+            <div class="caption">Когда сказали, что лучше деньгами:</div>
+        </div>
+        <p>Подарок лучше деньгами!</p>
+        <p>(Но если принесете торт — тоже не обидимся)</p>
+    </section>
+    
+    <section id="program">
+        <h2>ЧТО БУДЕТ НА ПРАЗДНИКЕ</h2>
+        <div class="meme-container">
+            <img class="meme" src="https://i.imgflip.com/7xm2e6.jpg" alt="Мем про караоке и коньяк">
+            <div class="caption">Когда сказали "прополощите горлышко коньячком":</div>
+        </div>
+        <p>• Караоке до потери голоса (и слуха)</p>
+        <p>• Коньячок для полоскания горла (и не только)</p>
+        <p>• Торт (если кто-то принесет)</p>
+        <p>• Никита в шоке (это главное!)</p>
+    </section>
+    
+    <section id="warning">
+        <h2>ВНИМАНИЕ!</h2>
+        <div class="meme-container">
+            <img class="meme" src="https://i.imgflip.com/7xm3e0.jpg" alt="Мем про секрет">
+            <div class="caption">Когда пытаешься хранить секрет:</div>
+        </div>
+        <p>Не проболтайтесь Никите!</p>
+        <p>Иначе... вам придется петь первым!</p>
+    </section>
+    
+    <section id="final">
+        <h2>P.S.</h2>
+        <div class="meme-container">
+            <img class="meme" src="https://i.imgflip.com/7xm4e2.jpg" alt="Мем про пение">
+            <div class="caption">Когда сказали "будем петь громко":</div>
+        </div>
+        <p>Захватите настроение и готовность петь громко!</p>
+        <p>(И да, коньячок тоже захватите)</p>
+        <div class="ps">
+            <p>Ждем всех в 19:00!</p>
+            <p>И помните: Никита ничего не знает!</p>
+        </div>
+    </section>
+
+    <script>
+        // Анимация появления секций при прокрутке
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const scrollHint = document.querySelector('.scroll-hint');
+            
+            // Функция для проверки видимости элемента
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
+                );
+            }
+            
+            // Функция для обработки прокрутки
+            function checkSections() {
+                sections.forEach(section => {
+                    if (isElementInViewport(section)) {
+                        section.classList.add('visible');
+                    }
+                });
+                
+                // Скрыть подсказку прокрутки после начала прокрутки
+                if (window.pageYOffset > 100) {
+                    scrollHint.style.display = 'none';
+                } else {
+                    scrollHint.style.display = 'block';
+                }
+            }
+            
+            // Инициализация
+            window.addEventListener('scroll', checkSections);
+            window.addEventListener('resize', checkSections);
+            window.addEventListener('load', checkSections);
+            
+            // Создание конфетти
+            function createConfetti() {
+                const colors = ['#ff6b6b', '#06d6a0', '#118ab2', '#ef476f', '#ffd166'];
+                const container = document.body;
+                
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = (5 + Math.random() * 10) + 'px';
+                    confetti.style.height = (5 + Math.random() * 10) + 'px';
+                    container.appendChild(confetti);
+                    
+                    // Анимация конфетти
+                    setTimeout(() => {
+                        confetti.style.opacity = '1';
+                        confetti.style.transition = 'all 1s ease-out';
+                        confetti.style.transform = `translateY(${-window.innerHeight}px) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg)`;
+                        
+                        // Удаление конфетти после анимации
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, 1000);
+                    }, i * 20);
+                }
+            }
+            
+            // Запуск конфетти при загрузке и клике
+            createConfetti();
+            document.body.addEventListener('click', createConfetti);
+        });
+    </script>
+</body>
 </html>
